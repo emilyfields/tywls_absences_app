@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+<!-- Replace the title block with this one: -->
+{% block title %} Create Absences - The TYWLS Absence App {% endblock %}
+
+<!-- Replace the nave_Name block with the user's name -->
+{% block nav_name %} 
+    <h5 class = "nav-item">
+        Hi, {{ user.name }}!
+    </h5>
+
+    <span class = "navbar-text">
+        Do you want to <a href="/logout">logout?</a>
+    </span>
+{% endblock %} 
+
+
+<!-- Replace the content block with this one: -->
+{% block content %}
+<div class="card text-center center" style="width: 23rem;">
+      <div class="card-body">
+        <h5 class="card-title">Schedule An Absence</h5>
+        <p class="card-text">When will you be absent?</p>
+        
+        <form action = "/myabsences" method="POST" style = "width: 20rem;">
+            <div class="form-group">
+                <input type="date" class="form-control" name="date">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="class_name" placeholder="Class Name">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="period" min=1 max=8 placeholder="Period">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="room" placeholder="Room">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" value="schedule">Schedule Absence</button>
+        </form> 
+    </div>
+</div>
+
+{% endblock %}

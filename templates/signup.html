@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+<!-- Replace the title block with this one: -->
+{% block title %} Sign Up - The TYWLS Absence App {% endblock %}
+
+
+<!-- Replace the content block with this one: -->
+{% block content %}
+<div class="card text-center center" style="width: 35rem;">
+      <div class="card-body">
+        <h5 class="card-title">Sign Up for The TYWLS of Asotria Absences App!</h5>
+        <p class="card-text">Let us help you with your absences.</p>
+        <br>
+        
+        <form action = "/signup" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" name = "username" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control"  name="password" placeholder="Password">
+            </div>
+            <br>
+            <!-- <p> Tell us about your schedule. </p>
+
+            <div class="card-deck">
+                <div class = "row container">
+                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">First Class</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="class_one_name">Class Name</label>
+                                <input type="text" class="form-control" name="class_one_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="class_one_period">Period</label>
+                                <input type="number" class="form-control" name="class_one_period" min=1 max=8>
+                            </div>
+                            <div class="form-group">
+                                <label for="class_one_room">Room</label>
+                                <input type="number" class="form-control" name="class_one_room">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Second Class</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="class_two_name">Class name</label>
+                                <input type="text" class="form-control" name="class_two_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="class_two_period">Period</label>
+                                <input type="number" class="form-control" name="class_two_period" min=1 max=8>
+                            </div>
+                            <div class="form-group">
+                                <label for="class_two_room">Room</label>
+                                <input type="number" class="form-control" name="class_two_room">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Third Class</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="class_three_name">Class name</label>
+                                <input type="text" class="form-control" name="class_three_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="class_three_period">Period</label>
+                                <input type="number" class="form-control" name="class_three_period" min=1 max=8>
+                            </div>
+                            <div class="form-group">
+                                <label for="class_three_room">Room</label>
+                                <input type="number" class="form-control" name="class_three_room">
+                            </div>
+                    </div>
+                </div>
+                </div>
+
+
+                <div class= "row container">
+                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Fourth Class</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="class_four_name">Class name</label>
+                                <input type="text" class="form-control" name="class_four_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="class_four_period">Period</label>
+                                <input type="number" class="form-control" name="class_four_period" min=1 max=8>
+                            </div>
+                            <div class="form-group">
+                                <label for="class_four_room">Room</label>
+                                <input type="number" class="form-control" name="class_four_room">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Fifth Class</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="class_five_name">Class name</label>
+                                <input type="text" class="form-control" name="class_five_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="class_five_period">Period</label>
+                                <input type="number" class="form-control" name="class_five_period" min=1 max=8>
+                            </div>
+                            <div class="form-group">
+                                <label for="class_five_room">Room</label>
+                                <input type="number" class="form-control" name="class_five_room">
+                            </div>
+                    </div>
+                </div>
+                </div>
+
+            </div> -->
+
+            {% if error %}
+                <p id="error"> {{ error }} <a href="/login">Log In.</a> </p>
+            {% endif %}
+
+            <button type="submit" class="btn btn-primary btn-block" value="Sign Up">Sign Up</button>
+        </form>
+        
+        
+      </div>
+</div>
+{% endblock %}

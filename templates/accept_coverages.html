@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+<!-- Replace the title block with this one: -->
+{% block title %} Accept Coverages - The TYWLS Absence App {% endblock %}
+
+<!-- Replace the nave_Name block with the user's name -->
+{% block nav_name %} 
+    <h5 class = "nav-item">
+        Hi, {{user['name']}}!
+    </h5>
+
+    <span class = "navbar-text">
+        Do you want to <a href="/logout">logout?</a>
+    </span>
+{% endblock %} 
+
+
+<!-- Replace the content block with this one: -->
+{% block content %}
+<div class="col-sm-6 center">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">List of Classes That Need Coverages</h5>
+      
+        <p class="card-text">Please select the class you wish to cover.</p>
+       
+       <form action = "/accept/coverages" method="POST">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Class</th>
+                    <th scope="col">Period</th>
+                    <th scope="col">Room</th>
+                    <th scope="col">Teacher</th>
+                </tr>
+            </thead>
+               
+            <tbody>
+                
+                {% for coverage in coverages %}
+                <tr>
+                    <td scope="row"><input type="checkbox" value="" name="check"></td>
+                    <td>{{ coverage['date'] }}</td>
+                    <td>{{ coverage['class'] }}</td>
+                    <td>{{ coverage['period'] }}</td>
+                    <td>{{ coverage['room'] }}</td>
+                    <td>{{ coverage['teacher out'] }}</td>
+                    </label>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+
+        <button type="submit" class="btn btn-primary">Cover Class</button>
+        </form>
+      </div>
+    </div>
+ </div>
+{% endblock %}

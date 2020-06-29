@@ -1,0 +1,57 @@
+/* 
+Blue: 1D2757
+Yellow: FFD10A
+Light Blue: 0DB1E1
+Gray: C0BFBF
+
+HEADINGS:
+font-family: 'Roboto', sans-serif;
+
+TEXT:  
+font-family: 'Montserrat', sans-serif;
+
+ */
+
+body{
+    background: #FFD10A;
+}
+
+#login-body {
+  padding: 0px 25rem;
+}
+
+#error{
+    color: maroon;
+}
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.card{
+    text-align: left;
+}
+
+#homepage{
+    padding: 0 30px;
+}
+
+div, h1, h2, h3, h4, h5 {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn {
+  background: #0DB1E1;
+  border-color: #0DB1E1;
+}
+
+.btn:hover{
+  background: #1D2757;
+  border-color: #1D2757;
+}

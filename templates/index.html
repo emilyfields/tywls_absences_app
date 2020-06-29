@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	 crossorigin="anonymous">
+
+	<!-- Google Fonts -->
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@700&display=swap');
+	</style>
+
+	<!-- Link Style Sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}?q={{ time }}" />
+
+	<title>Welcome to the TYWLS Astoria Absences App</title>
+</head>
+
+<body id = "login-body">
+	<br><br><br>
+
+	<div class="container">
+		<div class="card text-center" style="width: 35rem;">
+			<img src="static/images/tywls_logo.png" class="card-img-top center" style="width: 20rem; height: 20rem;">
+		
+      <div class="card-body">
+        <h5 class="card-title">Welcome to the TYWLS Asotria Absences App!</h5>
+        <p class="card-text">Let us help you with your absences.</p>
+        
+        <form action="/login" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+
+          {% if error %}
+            <p id="error"> {{ error }} </p>
+          {% endif %}
+
+          <button type="submit" class="btn btn-primary btn-block" value="Log In">Log In</button>
+        </form>
+
+        <br>
+
+        <p class="card-text">Don't have a log in yet? <a href="/signup">Sign Up.</a> </p>
+        
+      </div>
+	  </div>
+  </div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	 crossorigin="anonymous">
+
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	 crossorigin="anonymous">
+
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+	 crossorigin="anonymous">
+
+	</script>
+</body>
+
+</html>

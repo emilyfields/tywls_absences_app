@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+<!-- Replace the title block with this one: -->
+{% block title %} Sign Up - The TYWLS Absence App {% endblock %}
+
+<!-- Replace the nave_Name block with the user's name -->
+{% block nav_name %} 
+    <h5 class = "nav-item">
+        Hi, {{ user.name }}!
+    </h5>
+
+    <span class = "navbar-text">
+        Do you want to <a href="/logout">logout?</a>
+    </span>
+{% endblock %} 
+
+
+<!-- Replace the content block with this one: -->
+{% block content %}
+<div class="row" id = "homepage">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Absences Scheduled</h5>
+        <!-- for users that have no absences -->
+        {% if not absences %}
+            <p id="error">You have no absences scheduled.</p>
+
+        <!-- for users that have some absences -->
+        {% else %}
+        <p class="card-text">Below is a list of absences you have already scheduled.</p>
+       
+        <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scome="col">Class</th>
+                        <th scope="col">Period</th>
+                        <th scope="col">Covered?</th>
+                    </tr>
+                </thead>
+               
+                <tbody>
+                    {% for absence in absences %}
+                    <tr>
+                        <td>{{ absence['date'] }}</td>
+                        <td>{{ absence['class'] }}</td>
+                        <td>{{ absence['period'] }}</td>
+                        <td>{{ absence['coverage'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+            {% endif %}
+        <a href="/myabsences" class="btn btn-primary">Schedule A New Absence</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Coverages Accepted</h5>
+        <!-- for users that have no absences -->
+        {% if not coverages %}
+            <p id="error">You have not accepted any coverages.</p>
+
+        <!-- for users that have some absences -->
+        {% else %}
+        <p class="card-text">Below is a list of coverages you have already accepted.</p>
+       
+        <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Class</th>
+                        <th scope="col">Period</th>
+                        <th scope="col">Room</th>
+                        <th scope="col">Teacher</th>
+                    </tr>
+                </thead>
+               
+                <tbody>
+                    {% for coverage in coverages %}
+                    <tr>
+                        <td scope="row">{{ coverage['date'] }}</td>
+                        <td>{{ coverage['class'] }}</td>
+                        <td>{{ coverage['period'] }}</td>
+                        <td>{{ coverage['room'] }}</td>
+                        <td>{{ coverage['teacher out'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+            {% endif %}
+        <a href="/accept/coverages" class="btn btn-primary">Accept New Coverages</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
