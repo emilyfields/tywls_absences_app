@@ -132,7 +132,7 @@ def create_absence():
     elif request.method == 'POST':
         date = request.form['date']
         dateObj = datetime.strptime(date, '%Y-%m-%d')
-        dateStr = dateObj.strftime('%b %d, %Y')
+        dateStr = dateObj.strftime('%B %d, %Y')
 
         absences_collection.insert({
             'teacher out': user['name'], 
